@@ -1,0 +1,19 @@
+[
+  {
+    "Name": "Chick Chick",
+    "Price": 9.99,
+    "Category": "General",
+    "Author": "Chickie",
+    "CreateBy": "Joe Kim",
+    "UpdateBy": "Joe Kim"
+  },
+  {
+    "Code": "89b391ec-95b8-4d4c-b83d-bed5833a20a7",
+    "Name": "Chick Chick",
+    "Price": 19.99,
+    "Category": "General",
+    "Author": "Chickie",
+    "CreateBy": "Joe Kim",
+    "UpdateBy": "Snoopy"
+  }
+]
