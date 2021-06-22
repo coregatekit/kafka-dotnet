@@ -31,7 +31,8 @@ namespace ConsumerService
         {
             services.Configure<BookstoreDatabaseSettings>(
                 Configuration.GetSection(nameof(BookstoreDatabaseSettings)));
-
+            services.Configure<KafkaConfigs>(Configuration.GetSection("KafkaConfigs"));
+            
             services.AddSingleton<IBookstoreDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<BookstoreDatabaseSettings>>().Value);
 

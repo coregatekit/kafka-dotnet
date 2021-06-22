@@ -1,17 +1,23 @@
 using System;
 using System.Text.Json;
 using Confluent.Kafka;
+using Microsoft.Extensions.Options;
 using ProducerService.Models;
 
 namespace ProducerService.Services
 {
   public class KafkaProducerService
   {
-    private readonly ProducerConfig config = new ProducerConfig
+    private readonly ProducerConfig config;
+    private readonly string topic;
+
+    public KafkaProducerService(IOptions<KafkaConfigs> kafkaConfigs)
     {
-      BootstrapServers = "localhost:9092"
-    };
-    private readonly string topic = "bookstore_example";
+        config = new ProducerConfig {
+          BootstrapServers = kafkaConfigs.Value.Host
+        };
+        topic = kafkaConfigs.Value.Topic;
+    }
 
     public void SendToKafka(string message)
     {
